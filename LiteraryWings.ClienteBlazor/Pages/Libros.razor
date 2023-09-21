@@ -1,7 +1,65 @@
 ﻿@page "/libros"
+@using Models
+@using Services
+@inject ILibroService LibroService
 
-<h3>Libros</h3>
+<MudText Typo="Typo.h4">Libros</MudText>
+
+@if (libros == null)
+{
+    <p>Cargando...</p>
+}
+else
+{
+    <div class="row">
+        @foreach (var item in libros)
+        {
+            <div class="col-md-3">
+                <a class="btn" href="@($"/libroDetalles/{item.Id}")">
+
+                    <div class="card1">
+                        <div class="card-content">
+
+                            <div class="card-front contenedor">
+                                <img class="Ajustarimagen" src="@item.ImagenPortada" alt="@item.Nombre">
+                                <p class="sub-fechaLanzamiento">
+                                    @item.FechaLanzamiento
+                                </p>
+                            </div>
+
+                            <div class="card-back contenedor">
+                                <img class="Ajustarimagen" src="@item.ImagenIntroduccion" alt="@item.Nombre">
+                                <div class="fondo row ">
+                                    <div class="movie-description">
+                                        <span class="AtributosLibro ">Descripción:  </span>@item.Descripcion
+                                    </div>
+                                    <div class="genre">
+                                        <span class="AtributosLibro ">Nº Páginas:  </span>@item.Paginas
+                                    </div>
+                                    <div class="back-title">
+                                        <span class="AtributosLibro ">Idioma:  </span>@item.Idioma
+                                    </div>
+                                    <div class="release-date">
+                                        <span class="AtributosLibro ">Fecha de publicación:  </span>@item.FechaLanzamiento
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h1 class="title">
+                        @item.Nombre
+                    </h1>
+                </a>
+            </div>
+        }
+    </div>
+}
 
 @code {
+    IEnumerable<Libro> libros = new List<Libro>();
 
+    protected override async Task OnInitializedAsync()
+    {
+        libros = await LibroService.GetAll();
+    }
 }

@@ -1,0 +1,62 @@
+﻿@page "/libroDetalles/{id:int}"
+@using Models
+@using Services
+@inject ILibroService LibroService
+
+<MudText Typo="Typo.h5">Detalles del Libro</MudText>
+
+@if (libro == null)
+{
+        <p><em>Cargando...</em></p>
+}
+else
+{
+        <MudCard>
+            <MudCardHeader Class="blue lighten-2">
+                <CardHeaderContent>
+                <MudText Typo="Typo.h6">@libro.Nombre</MudText>
+                </CardHeaderContent>
+            </MudCardHeader>
+
+            <MudCardContent>
+                <MudText Typo="Typo.body2">@libro.FechaLanzamiento</MudText>
+            </MudCardContent>
+
+            <MudCardContent>
+                <MudText Typo="Typo.body2">@libro.Idioma</MudText>
+            </MudCardContent>
+
+            <MudCardContent>
+            <MudText Typo="Typo.body2">@libro.Paginas</MudText>
+                </MudCardContent>
+
+            <MudCardContent>
+                <MudText Typo="Typo.body2">@libro.Descripcion</MudText>
+            </MudCardContent>
+
+            <MudCardActions Class="center">
+                <img src="@libro.ImagenPortada" alt="@libro.Nombre" Elevation="25" Class="rounded-lg" width="60%" height="auto" />
+            </MudCardActions>
+
+            <MudCardActions Class="center">
+                <img src="@libro.ImagenIntroduccion" alt="@libro.Nombre" Elevation="25" Class="rounded-lg" width="60%" height="auto" />
+            </MudCardActions>
+
+            <MudCardActions>
+                <MudButton Link="@libro.LinkDescarga" Variant="Variant.Outlined" Color="Color.Success">DESCARGAR</MudButton>
+            </MudCardActions>
+        </MudCard>
+}
+
+@code {
+    [Parameter]
+    public int id { get; set; }
+
+    Libro libro = new Libro();
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (id > 0)
+            libro = await LibroService.GetById(id);
+    }
+}

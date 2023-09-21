@@ -1,0 +1,307 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+* {
+    margin: 0;
+    font-family: "poppins";
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bgColor: #00415A;
+    --primaryColor: #00B8FF;
+    --colorHover: #3BC9FF;
+    --sizeButton: 60px;
+    --sizeIcons: 25px;
+    --widthContent: 200px;
+    --heightContent: 130;
+
+    /* Colores */
+    --body-color: #0f0a06;
+    --white-color: #fff;
+    --Negro: #000;
+    --container-color: #1a1a1a96;
+    --light-bacco: #00FFDD;
+    --light-red: #ff0022;
+    --blue-magenta: #0404e2;
+    --limon: #bfff00;
+    --Spring-green: #00ff7f;
+    --darkslategray: #2f4f4f;
+    --yellow-light: #FFED00;
+    --light-orange: #fb5b17;
+
+    /* font sizes */
+    --h2-font-size: 2em;
+    --small-font-size: 1em;
+    --medium-font-size: 1.2em;
+    --smaller-font-size: 17px;
+}
+
+.body {
+    background-color: black;
+    color: white;
+}
+
+/*-------------------------------------------Diseño de LibroDetalles------------------------------------------------------*/
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.ContenedorDetallesPelicula {
+    margin-left: -20px;
+}
+
+.blog-slider {
+    /*width: 95%;*/
+    width: 1200px;
+    position: relative;
+    /*max-width: 800px;*/
+    margin: auto;
+    background: #fff;
+    background-image: linear-gradient(147deg, var(--light-bacco) 0%, black 74%);
+    box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+    padding: 25px;
+    border-radius: 25px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+}
+
+.blog-slider__content {
+    opacity: 1;
+    transform: none;
+}
+
+.blog-slider__img {
+    width: 40%;
+    width: 300px;
+    flex-shrink: 0;
+    height: 400px;
+    box-shadow: 4px 13px 30px 1px rgba(0, 255, 221, 0.2);
+    border-radius: 20px;
+    transform: translateX(-100px);
+    overflow: hidden;
+}
+
+.ImgDetalles {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 1;
+}
+
+.blog-slider__content {
+    width: 100%;
+    padding-right: 25px;
+}
+
+.blog-slider__title {
+    font-size: 35px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.blog-slider__text {
+    font-weight: 500;
+    font-size: 18px;
+    color: white;
+    margin-bottom: 30px;
+    line-height: 1.5em;
+}
+
+.blog-slider__año,
+.blog-slider__categoria {
+    font-size: 20px;
+    color: black;
+    margin-top: -20px;
+    margin-bottom: 20px;
+    display: block;
+    font-weight: 500;
+}
+
+.conic {
+    position: relative;
+    z-index: 0;
+    width: 1200px;
+    height: 700px;
+    margin: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 2rem;
+}
+
+.conic::before {
+    content: "";
+    position: absolute;
+    z-index: -2;
+    left: -50%;
+    top: -50%;
+    width: 200%;
+    height: 200%;
+    background-color: var(--light-bacco);
+    background-image: conic-gradient(transparent, transparent 30%);
+    animation: rotate 8s linear infinite;
+}
+
+.conic::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 6px;
+    top: 6px;
+    width: calc(100% - 12px);
+    height: calc(100% - 12px);
+    background: black;
+    border-radius: 5px;
+}
+
+.conic-demo::after {
+    -webkit-animation: opacityChange 8s infinite;
+    animation: opacityChange 8s infinite;
+}
+
+@keyframes opacityChange {
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.ContenedorBotonesDetalles {
+}
+
+.BotonesDetallesPeli {
+    width: 200px;
+    display: inline-block;
+    padding: 5px 0px;
+    background-color: black;
+    color: var(--white-color);
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 20px;
+    border: 2px solid var(--white-color);
+    cursor: pointer;
+    margin-top: 0px;
+    margin-left: 0px;
+}
+
+.Descargar:hover {
+    color: var(--light-orange);
+    background-color: black;
+    border: 2px solid var(--light-orange);
+}
+
+.Regresar:hover {
+    color: var(--light-bacco);
+    background-color: black;
+    border: 2px solid var(--light-bacco);
+}
+/*-------------------------------------Diseño de cuadro de Libros------------------------------------*/
+.card1 {
+    width: 300px;
+    height: 400px;
+}
+
+.Ajustarimagen {
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+    border-radius: 20px;
+    border: 4px solid var(--light-bacco);
+}
+
+.card-content {
+    width: 300px;
+    height: 400px;
+    transform-style: preserve-3d;
+    transition: transform 3s;
+}
+
+.card1:hover .card-content {
+    transform: rotateY(180deg);
+}
+
+.fondo {
+    width: 300px;
+    height: 380px;
+    background-color: black;
+    font-weight: bold;
+    opacity: 0.65;
+    padding: 16px;
+    border-radius: 20px;
+    transform: translateY(-368px)
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    inset: 1rem;
+    color: white;
+    border-radius: 20px;
+}
+
+.card-front {
+    align-items: center;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    gap: 0.5rem;
+}
+
+.contenedor {
+    display: inline-block;
+}
+
+.card-front {
+    content: "";
+    transform: translateZ(2rem);
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 0px;
+    color: var(--Negro);
+}
+
+.title:hover {
+    color: var(--light-bacco);
+}
+
+.sub-fechaLanzamiento {
+    border-radius: 10px;
+    padding: 5px;
+    color: black;
+    background-color: var(--light-bacco);
+    margin-left: 140px;
+    margin-top: -32px;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transform: translateZ(3rem);
+}
+
+.AtributosLibro {
+    color: var(--light-bacco);
+    font-size: 20px;
+    font-weight: bold;
+}
