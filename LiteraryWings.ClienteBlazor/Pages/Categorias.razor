@@ -1,7 +1,38 @@
 ﻿@page "/categorias"
+@using Models
+@using Services
+@inject ICategoriaService CategoriaService
 
-<h3>Categorias</h3>
+<br />
+<br />
+<br />
+<MudText Typo="Typo.h3">Categorias</MudText>
+<br />
+<MudGrid>
+
+    @foreach (var item in cate)
+    {
+        <MudItem xs="12" sm="10" md="6" lg="4">
+            <MudCard>
+                <MudCardHeader Class="blue darken-1">
+                    <CardHeaderContent>
+                        <MudText Typo="Typo.h6">@item.Nombre</MudText>
+                    </CardHeaderContent>
+                </MudCardHeader>
+
+                <MudCardActions>
+                    <MudButton Link="@($"/librcate/{item.Id}")" Variant="Variant.Outlined" Color="Color.Tertiary"
+                               Class="text-center">Ver libros</MudButton>
+                </MudCardActions>
+            </MudCard>
+        </MudItem>
+    }
+</MudGrid>
 
 @code {
-
+    IEnumerable<Categoria> cate = new List<Categoria>();
+    protected override async Task OnInitializedAsync()
+    {
+        cate = await CategoriaService.GetAll();
+    }
 }
