@@ -11,6 +11,7 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://www.LiteraryWings.somee.com/api/") });
 builder.Services.AddScoped<ILibroService, LibroService>();
 builder.Services.AddScoped<ISugerenciaService, SugerenciaService>();
+builder.Services.AddScoped<ICategoriaService, CategoriaService>();
 
 builder.Services.AddMudServices(); //Importación de los servicios de MudBlazor
 
