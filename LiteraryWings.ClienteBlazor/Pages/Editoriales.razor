@@ -1,7 +1,37 @@
 ﻿@page "/editoriales"
+@using Models
+@using Services
+@inject IEditorialService EditorialService
 
 <h3>Editoriales</h3>
 
-@code {
+<MudText Typo="Typo.h3">Editoriales</MudText>
 
+<MudGrid>
+    @foreach (var item in editorial)
+    {
+       
+        <MudItem xs="12" sm="10" md="6" lg="4">
+            <MudCard>
+                <MudCardHeader Class="blue darken-1">
+                    <CardHeaderContent>
+                        <MudText Typo="Typo.h6">@item.Nombre</MudText>
+                    </CardHeaderContent>
+                </MudCardHeader>
+                
+                <MudCardActions>
+                    <MudButton Link="@($"/editorial/{item.Id}")" Variant="Variant.Outlined" Color="Color.Tertiary"
+                               Class="text-center">Ver editoriales</MudButton>
+                </MudCardActions>
+            </MudCard>
+        </MudItem>
+    }
+</MudGrid>
+
+@code {
+    IEnumerable<Editorial> editorial = new List<Editorial>();
+    protected override async Task OnInitializedAsync()
+    {
+        editorial = await EditorialService.GetAll();
+    }
 }
