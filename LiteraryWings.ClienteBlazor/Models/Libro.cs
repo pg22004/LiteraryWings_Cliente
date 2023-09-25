@@ -16,6 +16,7 @@ namespace LiteraryWings.ClienteBlazor.Models
         public string Idioma { get; set; }
         public int Paginas { get; set; }
         public string Descripcion { get; set; }
+        public string Descripcion2 { get; set; }
         public string ImagenPortada { get; set; }
         public string LinkDescarga { get; set; }
         public string ImagenIntroduccion { get; set; }

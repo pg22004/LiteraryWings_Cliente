@@ -3,7 +3,11 @@
 @using Services
 @inject ILibroService LibroService
 
-<MudText Typo="Typo.h4">Libros</MudText>
+<br>
+<br>
+<br>
+
+<MudText Typo="Typo.h4" Class="Titulolibro">Colección de Libros</MudText>
 
 @if (libros == null)
 {
@@ -14,7 +18,7 @@ else
     <div class="row">
         @foreach (var item in libros)
         {
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <a class="btn" href="@($"/libroDetalles/{item.Id}")">
 
                     <div class="card1">

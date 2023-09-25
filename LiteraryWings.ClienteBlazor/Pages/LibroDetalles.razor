@@ -3,49 +3,44 @@
 @using Services
 @inject ILibroService LibroService
 
-<MudText Typo="Typo.h5">Detalles del Libro</MudText>
-
+<br>
+<br>
+<br>
 @if (libro == null)
 {
-        <p><em>Cargando...</em></p>
+    <p><em>Cargando...</em></p>
 }
 else
 {
-        <MudCard>
-            <MudCardHeader Class="blue lighten-2">
-                <CardHeaderContent>
-                <MudText Typo="Typo.h6">@libro.Nombre</MudText>
-                </CardHeaderContent>
-            </MudCardHeader>
+@*    <MudText Typo="Typo.h3">@libro.Nombre @libro.FechaLanzamiento</MudText>*@
 
-            <MudCardContent>
-                <MudText Typo="Typo.body2">@libro.FechaLanzamiento</MudText>
-            </MudCardContent>
+    <div class="ContenedorDetallesLibro">
+        <div class="ContenedorLibro">
+            <div class="blog-slider__img">
+                <img class="ImgDetalles" src="@libro.ImagenPortada" alt="@libro.Nombre">
+            </div>
+            <div class="">
+                <div class="blog-slider__title">@libro.Nombre</div>
+                <div class="blog-slider__text">  @libro.Descripcion2</div>
+                <div class="blog-slider__text">Nº Páginas:    @libro.Paginas</div>
+                <div class="blog-slider__text">Idioma:    @libro.Idioma</div>
+                <span class="blog-slider__categoria">Autor:    @libro.IdAutor</span>
+                <span class="blog-slider__categoria">Categoría:    @libro.IdCategoria</span>
+                <span class="blog-slider__categoria">Editorial:    @libro.IdEditorial</span>
+                <span class="blog-slider__año">Fecha de Lanzamiento:    @libro.FechaLanzamiento</span>
+                <a href="@libro.LinkDescarga" class="btn Descargar" target="_blank"><i class="fa-solid fa-download fa-beat"></i>DESGARCAR</a>
+            </div>
+        </div>
+    </div>
+    <MudCard>
+        <MudCardActions Class="center">
+            <img src="@libro.ImagenPortada" alt="@libro.Nombre" Elevation="25" Class="rounded-lg" width="60%" height="auto" />
+        </MudCardActions>
 
-            <MudCardContent>
-                <MudText Typo="Typo.body2">@libro.Idioma</MudText>
-            </MudCardContent>
-
-            <MudCardContent>
-            <MudText Typo="Typo.body2">@libro.Paginas</MudText>
-                </MudCardContent>
-
-            <MudCardContent>
-                <MudText Typo="Typo.body2">@libro.Descripcion</MudText>
-            </MudCardContent>
-
-            <MudCardActions Class="center">
-                <img src="@libro.ImagenPortada" alt="@libro.Nombre" Elevation="25" Class="rounded-lg" width="60%" height="auto" />
-            </MudCardActions>
-
-            <MudCardActions Class="center">
-                <img src="@libro.ImagenIntroduccion" alt="@libro.Nombre" Elevation="25" Class="rounded-lg" width="60%" height="auto" />
-            </MudCardActions>
-
-            <MudCardActions>
-                <MudButton Link="@libro.LinkDescarga" Variant="Variant.Outlined" Color="Color.Success">DESCARGAR</MudButton>
-            </MudCardActions>
-        </MudCard>
+        <MudCardActions Class="center">
+            <img src="@libro.ImagenIntroduccion" alt="@libro.Nombre" Elevation="25" Class="rounded-lg" width="60%" height="auto" />
+        </MudCardActions>
+    </MudCard>
 }
 
 @code {
