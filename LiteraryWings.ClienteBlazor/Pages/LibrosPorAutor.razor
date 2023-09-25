@@ -1,50 +1,47 @@
-﻿@page "/autores"
+﻿@page "/libroautor/{id:int}"
 @using Models
 @using Services
-@inject IAutorService AutorService
+@inject ILibroService LibroService
 
 <br />
 <br />
 <br />
-<MudText Typo="Typo.h3">Autores</MudText>
-<br />
-
-@if (autores == null)
+@if (libros == null)
 {
     <p>Cargando...</p>
 }
 else
 {
     <div class="row">
-        @foreach (var item in autores)
+        @foreach (var item in libros)
         {
-            <div class="col-md-4">
-                <a class="btn" href="@($"/libroautor/{item.Id}")">
+            <div class="col-md-3">
+                <a class="btn" href="@($"/libroDetalles/{item.Id}")">
 
                     <div class="card1">
                         <div class="card-content">
 
                             <div class="card-front contenedor">
-                                <img class="Ajustarimagen" src="@item.AutorImagen" alt="@item.Nombre">
-                                <p class="sub-fechaNacimiento">
-                                    @item.FechaNacimiento
+                                <img class="Ajustarimagen" src="@item.ImagenPortada" alt="@item.Nombre">
+                                <p class="sub-fechaLanzamiento">
+                                    @item.FechaLanzamiento
                                 </p>
                             </div>
 
                             <div class="card-back contenedor">
-                                <img class="Ajustarimagen" src="@item.AutorImagen" alt="@item.Nombre">
+                                <img class="Ajustarimagen" src="@item.ImagenIntroduccion" alt="@item.Nombre">
                                 <div class="fondo row ">
                                     <div class="movie-description">
-                                        <span class="AtributosLibro ">Nombre:  </span>@item.Nombre @item.Apellido
+                                        <span class="AtributosLibro ">Descripción:  </span>@item.Descripcion
                                     </div>
                                     <div class="genre">
-                                        <span class="AtributosLibro ">Fecha de Nacimiento:  </span>@item.FechaNacimiento
+                                        <span class="AtributosLibro ">Nº Páginas:  </span>@item.Paginas
                                     </div>
                                     <div class="back-title">
-                                        <span class="AtributosLibro ">Seudonimo:  </span>@item.Seudonimo
+                                        <span class="AtributosLibro ">Idioma:  </span>@item.Idioma
                                     </div>
                                     <div class="release-date">
-                                        <span class="AtributosLibro ">Nacionalidad:  </span>@item.Nacionalidad
+                                        <span class="AtributosLibro ">Fecha de publicación:  </span>@item.FechaLanzamiento
                                     </div>
                                 </div>
                             </div>
@@ -58,11 +55,15 @@ else
         }
     </div>
 }
-@code {
-    IEnumerable<Autor> autores = new List<Autor>();
 
+@code {
+    [Parameter]
+    public int id { get; set; }
+
+    IEnumerable<Libro> libros = new List<Libro>();
     protected override async Task OnInitializedAsync()
     {
-        autores = await AutorService.GetAll();
+        if (id > 0)
+            libros = await LibroService.GetByAutor(id);
     }
 }

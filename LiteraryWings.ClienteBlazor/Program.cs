@@ -13,6 +13,7 @@ builder.Services.AddScoped<ILibroService, LibroService>();
 builder.Services.AddScoped<ISugerenciaService, SugerenciaService>();
 builder.Services.AddScoped<IEditorialService, EditorialService>();
 builder.Services.AddScoped<ICategoriaService, CategoriaService>();
+builder.Services.AddScoped<IAutorService, AutorService>();
 
 builder.Services.AddMudServices(); //Importación de los servicios de MudBlazor
 
