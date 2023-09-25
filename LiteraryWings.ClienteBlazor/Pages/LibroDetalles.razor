@@ -6,6 +6,8 @@
 <br>
 <br>
 <br>
+<br>
+
 @if (libro == null)
 {
     <p><em>Cargando...</em></p>
@@ -16,18 +18,18 @@ else
 
     <div class="ContenedorDetallesLibro">
         <div class="ContenedorLibro">
-            <div class="blog-slider__img">
+            <div class="ContenedorImagenPortada">
                 <img class="ImgDetalles" src="@libro.ImagenPortada" alt="@libro.Nombre">
             </div>
-            <div class="">
-                <div class="blog-slider__title">@libro.Nombre</div>
-                <div class="blog-slider__text">  @libro.Descripcion2</div>
-                <div class="blog-slider__text">Nº Páginas:    @libro.Paginas</div>
-                <div class="blog-slider__text">Idioma:    @libro.Idioma</div>
-                <span class="blog-slider__categoria">Autor:    @libro.IdAutor</span>
-                <span class="blog-slider__categoria">Categoría:    @libro.IdCategoria</span>
-                <span class="blog-slider__categoria">Editorial:    @libro.IdEditorial</span>
-                <span class="blog-slider__año">Fecha de Lanzamiento:    @libro.FechaLanzamiento</span>
+            <div class="ContenedorAtributos">
+                <div class="Nombre">@libro.Nombre</div>
+                <div class="Descripcion">  @libro.Descripcion2</div>
+                <div class="Pagina">Nº Páginas:    @libro.Paginas</div>
+                <div class="Idioma">Idioma:    @libro.Idioma</div>
+                <span class="Autor">Autor:    @libro.IdAutor</span>
+                <span class="Categoria">Categoría:    @libro.IdCategoria</span>
+                <span class="Editorial">Editorial:    @libro.IdEditorial</span>
+                <span class="FechaLanzamientoLibro">Fecha de Lanzamiento:    @libro.FechaLanzamiento</span>
                 <a href="@libro.LinkDescarga" class="btn Descargar" target="_blank"><i class="fa-solid fa-download fa-beat"></i>DESGARCAR</a>
             </div>
         </div>
