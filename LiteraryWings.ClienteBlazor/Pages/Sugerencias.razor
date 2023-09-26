@@ -1,7 +1,62 @@
 ﻿@page "/sugerencias"
+@inject NavigationManager NavigationManager
+@using Models
+@using Services
+@inject ISugerenciaService SugerenciaService
 
-<h3>Sugerencias</h3>
+<br />
+<br />
+<br />
+<MudText Typo="Typo.h3">Sugerencias del usuario</MudText>
+  
+    <MudGrid>
+    <MudItem xs="12" sm="7">
+        <MudPaper Class="pa-4">
+            <EditForm Model="sugerencia" OnValidSubmit="OnValidSubmit">
+                <DataAnnotationsValidator />
+                <MudCard>
+                    <MudCardContent>
+                        <MudTextField Label="Nombre" @bind-Value="sugerencia.Nombre" For="@(() => sugerencia.Nombre)" />
+                        <MudTextField Label="Correo" @bind-Value="sugerencia.Correo" For="@(() => sugerencia.Correo)" />
+                        <MudTextField Label="Comentario" @bind-Value="sugerencia.Comentario" For="@(() => sugerencia.Comentario)" />
+                        <MudDivider />
+                    </MudCardContent>
+                    <MudCardActions>
+                        <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Guardar</MudButton>
+                    </MudCardActions>
+                </MudCard>
+            </EditForm>
+            @if (showLeaveAlert)
+            {
+                <MudAlert Severity="Severity.Error" ContentAlignment="HorizontalAlignment.Center" ShowCloseIcon="true" CloseIconClicked="(() => CloseMe(true))">No se pudo guardar.</MudAlert>
+            }
+        </MudPaper>
+    </MudItem>
+</MudGrid>
 
 @code {
+    bool success;
+    private bool showLeaveAlert = false;
+    Sugerencia sugerencia = new Sugerencia();
 
+    private async Task OnValidSubmit(EditContext context)
+    {
+        int result = await SugerenciaService.Save(sugerencia);
+        if (result == 1)
+        {
+            success = true;
+            StateHasChanged();
+            NavigationManager.NavigateTo("sugerencias");
+        }
+        else
+        {
+            showLeaveAlert = true;
+        }
+
+    }
+
+    private void CloseMe(bool value)
+    {
+        showLeaveAlert = false;
+    }
 }

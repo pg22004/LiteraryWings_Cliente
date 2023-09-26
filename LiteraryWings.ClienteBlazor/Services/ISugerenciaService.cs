@@ -4,7 +4,7 @@ namespace LiteraryWings.ClienteBlazor.Services
 {
     public interface ISugerenciaService
     {
-       //Task<IEnumerable<Sugerencia>> GetAll();
-       Task Save(Sugerencia sugerencia);
+       Task<IEnumerable<Sugerencia>> GetAll();
+       Task<int> Save(Sugerencia sugerencia);
     }
 }
