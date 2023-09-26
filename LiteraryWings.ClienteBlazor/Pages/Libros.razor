@@ -64,6 +64,6 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        libros = await LibroService.GetAll();
+        libros = await LibroService.GetAllRefs();
     }
 }

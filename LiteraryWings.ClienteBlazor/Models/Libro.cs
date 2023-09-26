@@ -21,5 +21,9 @@ namespace LiteraryWings.ClienteBlazor.Models
         public string LinkDescarga { get; set; }
         public string ImagenIntroduccion { get; set; }
 
+
+        public Autor autor{ get; set; }
+        public Categoria categoria { get; set; }
+        public Editorial editorial { get; set; }
     }
 }

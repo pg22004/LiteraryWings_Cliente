@@ -22,6 +22,13 @@ namespace LiteraryWings.ClienteBlazor.Services
             return JsonSerializer.Deserialize<IEnumerable<Libro>>(resp, options);
         }
 
+        public async Task<IEnumerable<Libro>> GetAllRefs()
+        {
+            var resp = await client.PostAsJsonAsync($"Libro/Buscar", new { top_aux = 100 });
+            string respString = await resp.Content.ReadAsStringAsync();
+            return JsonSerializer.Deserialize<IEnumerable<Libro>>(respString, options);
+        }
+
         public async Task<IEnumerable<Libro>> GetByAutor(int idAut)
         {
             var resp = await client.PostAsJsonAsync($"Libro/Buscar", new { idAutor = idAut });
@@ -46,7 +53,8 @@ namespace LiteraryWings.ClienteBlazor.Services
         public async Task<Libro> GetById(int id)
         {
             string resp = await client.GetStringAsync($"Libro/{id}");
-            return JsonSerializer.Deserialize<Libro>(resp, options);
+            Libro libro = JsonSerializer.Deserialize<Libro>(resp, options);
+            return libro;
         }
     }
 }

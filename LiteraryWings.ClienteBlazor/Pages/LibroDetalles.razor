@@ -26,9 +26,9 @@ else
                 <div class="Descripcion">  @libro.Descripcion2</div>
                 <div class="Pagina">Nº Páginas:    @libro.Paginas</div>
                 <div class="Idioma">Idioma:    @libro.Idioma</div>
-                <span class="Autor">Autor:    @libro.IdAutor</span>
-                <span class="Categoria">Categoría:    @libro.IdCategoria</span>
-                <span class="Editorial">Editorial:    @libro.IdEditorial</span>
+                <span class="Autor">Autor:    @libro.autor.Seudonimo</span>
+                <span class="Categoria">Categoría:    @libro.categoria.Nombre</span>
+                <span class="Editorial">Editorial:    @libro.editorial.Nombre</span>
                 <span class="FechaLanzamientoLibro">Fecha de Lanzamiento:    @libro.FechaLanzamiento</span>
                 <a href="@libro.LinkDescarga" class="btn Descargar" target="_blank"><i class="fa-solid fa-download fa-beat"></i>DESGARCAR</a>
             </div>
