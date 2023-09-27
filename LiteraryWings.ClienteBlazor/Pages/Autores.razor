@@ -6,7 +6,7 @@
 <br />
 <br />
 <br />
-<MudText Typo="Typo.h3">Autores</MudText>
+<MudText Typo="Typo.h3" Class="Titulo">Autores</MudText>
 <br />
 
 @if (autores == null)
@@ -18,40 +18,40 @@ else
     <div class="row">
         @foreach (var item in autores)
         {
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <a class="btn" href="@($"/libroautor/{item.Id}")">
 
                     <div class="card1">
                         <div class="card-content">
 
                             <div class="card-front contenedor">
-                                <img class="Ajustarimagen" src="@item.AutorImagen" alt="@item.Nombre">
+                                <img class="Ajustarimagen" src="@item.AutorImagen" alt="@item.Seudonimo">
                                 <p class="sub-fechaNacimiento">
                                     @item.FechaNacimiento
                                 </p>
                             </div>
 
                             <div class="card-back contenedor">
-                                <img class="Ajustarimagen" src="@item.AutorImagen" alt="@item.Nombre">
+                                <img class="Ajustarimagen" src="@item.AutorImagen" alt="@item.Seudonimo">
                                 <div class="fondo row ">
                                     <div class="movie-description">
                                         <span class="AtributosLibro ">Nombre:  </span>@item.Nombre @item.Apellido
                                     </div>
                                     <div class="genre">
-                                        <span class="AtributosLibro ">Fecha de Nacimiento:  </span>@item.FechaNacimiento
+                                        <span class="AtributosLibro ">Nombre Artistico:  </span>@item.Seudonimo
                                     </div>
                                     <div class="back-title">
-                                        <span class="AtributosLibro ">Seudonimo:  </span>@item.Seudonimo
+                                        <span class="AtributosLibro ">Nacionalidad:  </span>@item.Nacionalidad
                                     </div>
                                     <div class="release-date">
-                                        <span class="AtributosLibro ">Nacionalidad:  </span>@item.Nacionalidad
+                                        <span class="AtributosLibro ">Fecha de Nacimiento:  </span>@item.FechaNacimiento
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <h1 class="title">
-                        @item.Nombre
+                        @item.Seudonimo
                     </h1>
                 </a>
             </div>

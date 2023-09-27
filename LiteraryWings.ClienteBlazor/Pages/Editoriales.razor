@@ -3,30 +3,29 @@
 @using Services
 @inject IEditorialService EditorialService
 
-<h3>Editoriales</h3>
+<br />
+<br />
+<br />
+<br />
+<MudText Typo="Typo.h3" Class="Titulo">Editoriales</MudText>
 
-<MudText Typo="Typo.h3">Editoriales</MudText>
-
-<MudGrid>
+<div class="row">
     @foreach (var item in editorial)
     {
-       
-        <MudItem xs="12" sm="10" md="6" lg="4">
-            <MudCard>
-                <MudCardHeader Class="blue darken-1">
-                    <CardHeaderContent>
-                        <MudText Typo="Typo.h6">@item.Nombre</MudText>
-                    </CardHeaderContent>
-                </MudCardHeader>
+        <div class="col-md-4">
+            <div class="contenedorboton">
+
+                <a class="butt" href="@($"/editorial/{item.Id}")">
+                    <span class="text">@item.Nombre</span>
+                    <div class="wave"></div>
+                </a>
+
                 
-                <MudCardActions>
-                    <MudButton Link="@($"/editorial/{item.Id}")" Variant="Variant.Outlined" Color="Color.Tertiary"
-                               Class="text-center">Ver editoriales</MudButton>
-                </MudCardActions>
-            </MudCard>
-        </MudItem>
+
+            </div>
+        </div>
     }
-</MudGrid>
+</div>
 
 @code {
     IEnumerable<Editorial> editorial = new List<Editorial>();
