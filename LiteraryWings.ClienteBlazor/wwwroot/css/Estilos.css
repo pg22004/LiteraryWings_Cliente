@@ -8,36 +8,37 @@
 }
 
 :root {
-    --bgColor: #00415A;
-    --primaryColor: #00B8FF;
-    --colorHover: #3BC9FF;
-    --sizeButton: 60px;
-    --sizeIcons: 25px;
-    --widthContent: 200px;
-    --heightContent: 130;
     /* Colores */
-    --body-color: #0f0a06;
-    --white-color: #fff;
-    --Negro: #000;
-    --container-color: #1a1a1a96;
-    --light-bacco: #00FFDD;
+    --cian-oscuro: #00415A;
+    --cian: #00B8FF;
+    --cian-claro: #3BC9FF;
+    --blanco: #fff;
+    --negro: #000;
+    --celeste-claro: #00FFDD;
     --light-red: #ff0022;
-    --blue-magenta: #0404e2;
-    --limon: #bfff00;
-    --Spring-green: #00ff7f;
-    --darkslategray: #2f4f4f;
-    --yellow-light: #FFED00;
-    --light-orange: #fb5b17;
-    /* font sizes */
-    --h2-font-size: 2em;
-    --small-font-size: 1em;
-    --medium-font-size: 1.2em;
-    --smaller-font-size: 17px;
+    --azul-magenta: #0404e2;
+    --naranja-claro: #fb5b17;
+    --verde-cian: #00ff7f;
+    /*Paleta de colores*/
+    --amarillo-oscuro: #a67c00;
+    --amarillo-medio-oscuro: #e9d700;
+    --sombra-amarillo: #bf9b30;
+    --amarillo-mostaza: #ffbf00;
+    --mostaza-medio-palido: #ffcf40;
+    --mostaza-palido: #ffdc73;
+    /*Opciones*/
+    --amarillo-claro: #FFED00;
+    --amarillo-verde: #bfff00;
 }
 
-.body {
-    background-color: black;
-    color: white;
+
+.body, html, .BodyPrime {
+    background: var(--mostaza-palido);
+}
+
+.Logo{
+    width: 50px;
+    height: 50px;
 }
 
 /*-------------------------------------Diseño de cuadro de Libros------------------------------------*/
@@ -51,7 +52,7 @@
     width: 100%;
     object-fit: fill;
     border-radius: 20px;
-    border: 4px solid var(--light-bacco);
+    border: 4px solid var(--amarillo-mostaza);
 }
 
 .card-content {
@@ -120,14 +121,14 @@
 }
 
 .title:hover {
-    color: var(--light-bacco);
+    color: var(--amarillo-mostaza);
 }
 
 .sub-fechaLanzamiento {
     border-radius: 10px;
     padding: 5px;
     color: black;
-    background-color: var(--light-bacco);
+    background-color: var(--amarillo-oscuro);
     margin-left: 140px;
     margin-top: -29px;
     font-size: 10px;
@@ -138,7 +139,7 @@
 }
 
 .AtributosLibro {
-    color: var(--light-bacco);
+    color: var(--amarillo-claro);
     font-size: 15px;
 }
 
