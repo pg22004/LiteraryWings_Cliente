@@ -1,0 +1,78 @@
+﻿.centrar {
+    justify-content: center;
+    align-items: center;
+    margin-left: 215px;
+    margin-right: 160px;
+    height: 400px;
+}
+
+.derecha {
+    float: right;
+    height: 400px;
+}
+
+.izquierda {
+    float: left;
+    height: 400px;
+}
+/*********************************************************/
+/*----------------------------------------------------------Carrusel----------------------------------------------------------------*/
+.Carrusel {
+    background-color: var(--light-bacco);
+    border-radius: 50px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.ContenedorImgCarrusel {
+    top: 20%;
+    border-radius: 50px;
+    -webkit-box-shadow: 3px 3px 20px 15px var(--light-bacco), inset 0px 0px 0px 46px var(--light-bacco);
+    box-shadow: 3px 3px 20px 15px var(--light-bacco), inset 0px 0px 0px 46px var(--light-bacco);
+    display: flex;
+}
+
+.CarruselImg {
+    background-color: black;
+    border-radius: 50px;
+    object-fit: contain;
+    height: 400px;
+    width: 100%;
+    display: flex;
+}
+
+.carousel-indicators [data-bs-target] {
+    box-sizing: content-box;
+    flex: 0 1 auto;
+    width: 15px;
+    height: 15px;
+    padding: 0;
+    margin-right: 3px;
+    margin-left: 3px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    opacity: .5;
+    transition: opacity .6s ease;
+    border-radius: 50%;
+    display: flex;
+}
+
+    .carousel-indicators [data-bs-target]:hover {
+        background-color: var(--light-bacco);
+        display: flex;
+    }
+
+/* Estilo para centrar el contenido en pantalla */
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  /* Esto asegura que el contenedor sea del mismo alto que la ventana gráfica del navegador */
+}
