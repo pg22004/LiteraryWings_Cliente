@@ -1,22 +1,4 @@
-﻿.centrar {
-    justify-content: center;
-    align-items: center;
-    margin-left: 215px;
-    margin-right: 160px;
-    height: 400px;
-}
-
-.derecha {
-    float: right;
-    height: 400px;
-}
-
-.izquierda {
-    float: left;
-    height: 400px;
-}
-/*********************************************************/
-/*----------------------------------------------------------Carrusel----------------------------------------------------------------*/
+﻿/*----------------------------------------------------------Carrusel----------------------------------------------------------------*/
 .Carrusel {
     background-color: var(--light-bacco);
     border-radius: 50px;
@@ -61,12 +43,10 @@
     opacity: .5;
     transition: opacity .6s ease;
     border-radius: 50%;
-    display: flex;
 }
 
     .carousel-indicators [data-bs-target]:hover {
         background-color: var(--light-bacco);
-        display: flex;
     }
 
 /* Estilo para centrar el contenido en pantalla */
