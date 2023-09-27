@@ -8,26 +8,23 @@
 <br />
 <MudText Typo="Typo.h4" Class="Titulo">Categorias</MudText>
 <br />
-<MudGrid>
+<div class="row">
 
     @foreach (var item in cate)
     {
-        <MudItem xs="12" sm="10" md="6" lg="4">
-            <MudCard>
-                <MudCardHeader Class="blue darken-1">
-                    <CardHeaderContent>
-                        <MudText Typo="Typo.h6">@item.Nombre</MudText>
-                    </CardHeaderContent>
-                </MudCardHeader>
 
-                <MudCardActions>
-                    <MudButton Link="@($"/librcate/{item.Id}")" Variant="Variant.Outlined" Color="Color.Tertiary"
-                               Class="text-center">Ver libros</MudButton>
-                </MudCardActions>
-            </MudCard>
-        </MudItem>
+        <div class="col-md-4">
+            <div class="contenedorboton">
+
+                <a class="butt" href="@($"/librcate/{item.Id}")">
+                    <span class="text">@item.Nombre</span>
+                    <div class="wave"></div>
+                </a>
+
+            </div>
+        </div>
     }
-</MudGrid>
+</div>
 
 @code {
     IEnumerable<Categoria> cate = new List<Categoria>();
