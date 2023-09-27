@@ -14,7 +14,7 @@
 }
 else
 {
-@*    <MudText Typo="Typo.h3">@libro.Nombre @libro.FechaLanzamiento</MudText>*@
+    @*    <MudText Typo="Typo.h3">@libro.Nombre @libro.FechaLanzamiento</MudText>*@
 
     <div class="ContenedorDetallesLibro">
         <div class="ContenedorLibro">
@@ -24,25 +24,25 @@ else
             <div class="ContenedorAtributos">
                 <div class="Nombre">@libro.Nombre</div>
                 <div class="Descripcion">  @libro.Descripcion2</div>
-                <div class="Pagina">Nº Páginas:    @libro.Paginas</div>
-                <div class="Idioma">Idioma:    @libro.Idioma</div>
-                <span class="Autor">Autor:    @libro.autor.Seudonimo</span>
-                <span class="Categoria">Categoría:    @libro.categoria.Nombre</span>
-                <span class="Editorial">Editorial:    @libro.editorial.Nombre</span>
-                <span class="FechaLanzamientoLibro">Fecha de Lanzamiento:    @libro.FechaLanzamiento</span>
-                <a href="@libro.LinkDescarga" class="btn Descargar" target="_blank"><i class="fa-solid fa-download fa-beat"></i>DESGARCAR</a>
+                <div class="Pagina">Nº Páginas: <span class="Sub-Detalles">@libro.Paginas</span></div>
+                <div class="Idioma">Idioma: <span class="Sub-Detalles">@libro.Idioma</span></div>
+                <div class="Autor">Autor: <span class="Sub-Detalles">@libro.autor.Seudonimo</span></div>
+                <div class="Categoria">Categoría: <span class="Sub-Detalles">@libro.categoria.Nombre</span></div>
+                <div class="Editorial">Editorial: <span class="Sub-Detalles">@libro.editorial.Nombre</span></div>
+                <div class="FechaLibro">Fecha de Lanzamiento: <span class="Sub-Detalles">@libro.FechaLanzamiento</span></div>
+                <a class="Descargar" href="@libro.LinkDescarga" target="_blank"><i class="fa-solid fa-download fa-beat"></i>DESGARCAR LIBRO</a>
             </div>
         </div>
     </div>
-    <MudCard>
-        <MudCardActions Class="center">
-            <img src="@libro.ImagenPortada" alt="@libro.Nombre" Elevation="25" Class="rounded-lg" width="60%" height="auto" />
-        </MudCardActions>
 
-        <MudCardActions Class="center">
-            <img src="@libro.ImagenIntroduccion" alt="@libro.Nombre" Elevation="25" Class="rounded-lg" width="60%" height="auto" />
-        </MudCardActions>
-    </MudCard>
+    <h1 class="Titulo-Imagenes">Portada e Introducción</h1>
+
+    <span class="Linea"></span>
+    <br>
+    <div class="contenedor-imagenes">
+        <img src="@libro.ImagenPortada" alt="@libro.Nombre" />
+        <img src="@libro.ImagenIntroduccion" alt="@libro.Nombre" />
+    </div>
 }
 
 @code {
