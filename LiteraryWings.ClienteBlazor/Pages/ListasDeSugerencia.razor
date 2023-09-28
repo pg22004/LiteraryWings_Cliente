@@ -1,0 +1,35 @@
+﻿@page "/Listsuegerencia"
+@using Models
+@using Services
+@inject ISugerenciaService SugereciaService
+
+<MudText Typo="Typo.h3">Sugerencias</MudText>
+
+<MudGrid>
+    @foreach (var item in sugerencias)
+    {
+        <MudItem xs="12" sm="10" md="6" lg="4">
+            <MudCard>
+                <MudCardHeader Class="blue darken-1">
+                    <CardHeaderContent>
+                        <MudText Typo="Typo.h6">Sugerencia de usuario</MudText>
+                    </CardHeaderContent>
+                </MudCardHeader>
+                <MudCardContent>
+                    <MudText Typo="Typo.h6">@item.Nombre</MudText>
+                    <MudText Typo="Typo.h6">@item.Correo</MudText>
+                    <MudText Typo="Typo.h6">@item.Comentario</MudText>
+                </MudCardContent>
+            </MudCard>
+        </MudItem>
+    }
+</MudGrid>
+
+
+@code {
+    IEnumerable<Sugerencia> sugerencias = new List<Sugerencia>();
+    protected override async Task OnInitializedAsync()
+    {
+        sugerencias = await SugereciaService.GetAll();
+    }
+}
