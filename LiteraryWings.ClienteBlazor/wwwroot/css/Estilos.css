@@ -37,10 +37,9 @@
 }
 
 .Logo{
-    margin-bottom: -40px;
-    margin-left: -20px;
+    transform:translateY(0px);
     width: 30%; 
-    height: 120px;
+    height: 100%;
 }
 
 @media (max-width: 950px) {
@@ -217,7 +216,6 @@
 .FechaLibro {
     font-size: 18px;
     font-weight: 900;
-    /*color: black;*/
     color: var(--amarillo-claro);
     margin-bottom: 20px;
     line-height: 1.5em;
@@ -325,4 +323,36 @@
     .contenedor-imagenes img {
     max-width: 100%;
     }
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ghost {
+  animation: float 3s ease-out infinite;
+}
+
+@keyframes float {
+  50% {
+     transform: translate(0, 20px);
+  }
+}
+
+@keyframes shrink {
+  0% {
+    width: 90%;
+    margin: 0 5%;
+  }
+  50% {
+    width: 60%;
+    margin: 0 18%;
+  }
+  100% {
+    width: 90%;
+    margin: 0 5%;
+  }
 }
