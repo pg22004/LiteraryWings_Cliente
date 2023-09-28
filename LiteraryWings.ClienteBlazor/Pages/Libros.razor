@@ -3,70 +3,63 @@
 @using Services
 @inject ILibroService LibroService
 
-<div class="body">
-    <br>
-    <br>
-    <br>
+<br>
+<br>
+<br>
+<h1 class="Titulo-Libro">Colección de Libros</h1>
+@*<MudText Typo="Typo.h4" Class="Titulo-Libro">Colección de Libros</MudText>*@
+<br />
 
-    <MudText Typo="Typo.h4" Class="Titulolibro">Colección de Libros</MudText>
+@if (libros == null)
+{
+    <p>Cargando...</p>
+}
+else
+{
 
-    @if (libros == null)
-    {
-        <p>Cargando...</p>
-    }
-    else
-    {
+    <div class="row">
+        @foreach (var item in libros)
+        {
+            <div class="col-md-4">
+                <a class="btn" href="@($"/libroDetalles/{item.Id}")">
 
-        <div class="row">
-            @foreach (var item in libros)
-            {
-                <div class="col-md-4">
-                    <a class="btn" href="@($"/libroDetalles/{item.Id}")">
+                    <div class="card1">
+                        <div class="card-content">
 
-                        <div class="card1">
-                            <div class="card-content">
+                            <div class="card-front contenedor">
+                                <img class="Ajustarimagen" src="@item.ImagenPortada" alt="@item.Nombre">
+                                <p class="sub-fechaLanzamiento">
+                                    @item.FechaLanzamiento
+                                </p>
+                            </div>
 
-                                <div class="card-front contenedor">
-                                    <img class="Ajustarimagen" src="@item.ImagenPortada" alt="@item.Nombre">
-                                    <p class="sub-fechaLanzamiento">
-                                        @item.FechaLanzamiento
-                                    </p>
-                                </div>
-
-                                <div class="card-back contenedor">
-                                    <img class="Ajustarimagen" src="@item.ImagenIntroduccion" alt="@item.Nombre">
-                                    <div class="fondo row ">
-                                        <div class="movie-description">
-                                            <span class="AtributosLibro ">Descripción:  </span>@item.Descripcion
-                                        </div>
-                                        <div class="genre">
-                                            <span class="AtributosLibro ">Nº Páginas:  </span>@item.Paginas
-                                        </div>
-                                        <div class="back-title">
-                                            <span class="AtributosLibro ">Idioma:  </span>@item.Idioma
-                                        </div>
-                                        <div class="release-date">
-                                            <span class="AtributosLibro ">Fecha de publicación:  </span>@item.FechaLanzamiento
-                                        </div>
+                            <div class="card-back contenedor">
+                                <img class="Ajustarimagen" src="@item.ImagenIntroduccion" alt="@item.Nombre">
+                                <div class="fondo row ">
+                                    <div class="movie-description">
+                                        <span class="AtributosLibro ">Descripción:  </span>@item.Descripcion
+                                    </div>
+                                    <div class="genre">
+                                        <span class="AtributosLibro ">Nº Páginas:  </span>@item.Paginas
+                                    </div>
+                                    <div class="back-title">
+                                        <span class="AtributosLibro ">Idioma:  </span>@item.Idioma
+                                    </div>
+                                    <div class="release-date">
+                                        <span class="AtributosLibro ">Fecha de publicación:  </span>@item.FechaLanzamiento
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <h1 class="title">
-                            @item.Nombre
-                        </h1>
-                    </a>
-                </div>
-            }
-        </div>
-
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path fill="#00c2c7" fill-opacity="1" d="M0,64L0,224L110.8,224L110.8,256L221.5,256L221.5,128L332.3,128L332.3,128L443.1,128L443.1,192L553.8,192L553.8,128L664.6,128L664.6,256L775.4,256L775.4,128L886.2,128L886.2,32L996.9,32L996.9,256L1107.7,256L1107.7,0L1218.5,0L1218.5,96L1329.2,96L1329.2,128L1440,128L1440,320L1329.2,320L1329.2,320L1218.5,320L1218.5,320L1107.7,320L1107.7,320L996.9,320L996.9,320L886.2,320L886.2,320L775.4,320L775.4,320L664.6,320L664.6,320L553.8,320L553.8,320L443.1,320L443.1,320L332.3,320L332.3,320L221.5,320L221.5,320L110.8,320L110.8,320L0,320L0,320Z"></path>
-        </svg>
-    }
-
-
-</div>
+                    </div>
+                    <h1 class="title">
+                        @item.Nombre
+                    </h1>
+                </a>
+            </div>
+        }
+    </div>
+}
 
 @code {
     IEnumerable<Libro> libros = new List<Libro>();

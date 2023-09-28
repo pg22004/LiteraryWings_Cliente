@@ -31,14 +31,16 @@
     --amarillo-verde: #bfff00;
 }
 
+/*---------------------------------------------Diseños Generales--------------------------------------------*/
+/*---------------------------------------------Diseños Generales--------------------------------------------*/
 
-.body, html, .BodyPrime {
+html, .BodyPrime {
     background: var(--mostaza-palido);
 }
 
-.Logo{
-    transform:translateY(0px);
-    width: 30%; 
+.Logo {
+    transform: translateY(0px);
+    width: 30%;
     height: 100%;
 }
 
@@ -56,6 +58,12 @@
         align-items: center;
         width: 80%;
     }
+}
+
+.Titulo-Bienvenida, .Titulo-Autores,
+.Titulo-Categorias, .Titulo-Editoriales, .Titulo-Libro {
+    text-align: center;
+    font-weight: bold;
 }
 
 /*-------------------------------------Diseño de cuadro de Libros------------------------------------*/
@@ -158,24 +166,6 @@
 .AtributosLibro {
     color: var(--amarillo-claro);
     font-size: 15px;
-}
-
-/*---------------------------------------------Diseño Libros--------------------------------------------*/
-/*---------------------------------------------Diseño Libros--------------------------------------------*/
-/*---------------------------------------------Diseño Libros--------------------------------------------*/
-
-
-.Titulo{
-    text-align: center;
-}
-
-.Titulolibro {
-    font-size: 35px;
-    font-weight: 900;
-    color: black;
-    margin-bottom: 20px;
-    line-height: 1.5em;
-    text-align: center;
 }
 
 /*-------------------------------------------Diseño de detalles------------------------------------------------------*/
@@ -284,7 +274,9 @@
     }
 }
 
-.Titulo-Imagenes {
+/*-------------------------------------------Diseño de las Imagenes de Detalles------------------------------------------------------*/
+
+.Titulo-Detalles-Imagenes {
     font-size: 35px;
     font-weight: 900;
     color: black;
@@ -293,9 +285,8 @@
     text-align: center;
 }
 
-
 .Linea{
-    background: var(--blue-magenta);
+    background: var(--amarillo-medio-oscuro);
     height: 5px;
     width: 100%;
     display: block; 
@@ -325,6 +316,7 @@
     }
 }
 
+/*-------------------------------------------Diseño del fantasma de Loading ------------------------------------------------------*/
 
 .container {
     display: flex;
@@ -356,3 +348,5 @@
     margin: 0 5%;
   }
 }
+
+/*-------------------------------------------Diseño de Bienvenida ------------------------------------------------------*/
