@@ -66,6 +66,15 @@ html, .BodyPrime {
     font-weight: bold;
 }
 
+.Titulo-Detalles-Imagenes, .Titulo-Galeria-Portada {
+    font-size: 35px;
+    font-weight: 900;
+    color: black;
+    margin-bottom: 20px;
+    line-height: 1.5em;
+    text-align: center;
+}
+
 /*-------------------------------------Diseño de cuadro de Libros------------------------------------*/
 .card1 {
     width: 275px;
@@ -276,15 +285,6 @@ html, .BodyPrime {
 
 /*-------------------------------------------Diseño de las Imagenes de Detalles------------------------------------------------------*/
 
-.Titulo-Detalles-Imagenes {
-    font-size: 35px;
-    font-weight: 900;
-    color: black;
-    margin-bottom: 20px;
-    line-height: 1.5em;
-    text-align: center;
-}
-
 .Linea{
     background: var(--amarillo-medio-oscuro);
     height: 5px;
@@ -350,3 +350,34 @@ html, .BodyPrime {
 }
 
 /*-------------------------------------------Diseño de Bienvenida ------------------------------------------------------*/
+
+.Contenedor-Galeria-Portada {
+    text-align: center;
+}
+
+.gallery-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.item {
+    flex: 1;
+    margin: 10px;
+    max-width: 100%; /* Establecer un ancho máximo para cada elemento */
+    min-width: 250px; /* Establecer un ancho mínimo para cada elemento */
+    height: 550px; /* Establecer una altura fija para todos los elementos */
+    overflow: hidden; /* Ocultar cualquier contenido adicional que exceda la altura */
+    transition: flex 0.8s ease;
+}
+
+.item:hover
+{
+    flex: 7;
+}
+
+.item img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover; /* Mantener la relación de aspecto y ajustar la imagen en el contenedor */
+}
