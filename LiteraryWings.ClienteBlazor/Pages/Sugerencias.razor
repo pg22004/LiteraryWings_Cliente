@@ -7,24 +7,31 @@
 <br />
 <br />
 <br />
-<MudText Typo="Typo.h3">Sugerencias del usuario</MudText>
+<h1 class="Titulo-SugerenciaDetalles">Sugerencias</h1>
   
+<br />
+<br />
+<br />
+
     <MudGrid>
-    <MudItem xs="12" sm="7">
-        <MudPaper Class="pa-4">
+    <MudItem xs="7" sm="5">
+        <MudPaper Class="p-4">
+           
             <EditForm Model="sugerencia" OnValidSubmit="OnValidSubmit">
                 <DataAnnotationsValidator />
-                <MudCard>
-                    <MudCardContent>
-                        <MudTextField Label="Nombre" @bind-Value="sugerencia.Nombre" For="@(() => sugerencia.Nombre)" />
+                <div class="card2">
+                    <MudCardContent col>
+                        <MudTextField Label="Nombre" @bind-value-="sugerencia.Nombre" For="@(() => sugerencia.Nombre)" />
+                        <br />
                         <MudTextField Label="Correo" @bind-Value="sugerencia.Correo" For="@(() => sugerencia.Correo)" />
+                        <br />
                         <MudTextField Label="Comentario" @bind-Value="sugerencia.Comentario" For="@(() => sugerencia.Comentario)" />
                         <MudDivider />
-                    </MudCardContent>
-                    <MudCardActions>
-                        <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Guardar</MudButton>
-                    </MudCardActions>
-                </MudCard>
+                        <br/>
+                    </MudCardContent>     
+                        <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Success" Class="ml-auto">Guardar</MudButton>
+                    <br />
+                </div>
             </EditForm>
             @if (showLeaveAlert)
             {
@@ -33,6 +40,7 @@
         </MudPaper>
     </MudItem>
 </MudGrid>
+
 
 @code {
     bool success;

@@ -1,1 +1,17 @@
-﻿
+﻿.card2 {
+    border: dashed;
+    justify-content: left;
+    font-weight: 300;
+    font-family: Verdana;
+    background-color: lemonchiffon;
+    text-align: center;
+    glyph-orientation-horizontal;
+    /*align-content: center;*/
+
+    /*position: center;*/
+    /*object-position: center; */
+}
+/*.bottom1{
+    justify-content:right;
+    color: red;*/
+/*}*/
