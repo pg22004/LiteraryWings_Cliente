@@ -60,8 +60,10 @@ html, .BodyPrime {
     }
 }
 
-.Titulo-Bienvenida, .Titulo-Autores, .Titulo-SugerenciaDetalles,
-.Titulo-Categorias, .Titulo-Editoriales, .Titulo-Libro {
+.Titulo-Bienvenida, .Titulo-Autores,
+.Titulo-SugerenciaDetalles, .Titulo-Sugerencia,
+.Titulo-Categorias, .Titulo-Editoriales,
+.Titulo-Libro {
     text-align: center;
     font-weight: bold;
 }
@@ -154,9 +156,9 @@ html, .BodyPrime {
     color: var(--Negro);
 }
 
-.title:hover {
-    color: var(--amarillo-mostaza);
-}
+    .title:hover {
+        color: var(--amarillo-mostaza);
+    }
 
 .sub-fechaLanzamiento {
     border-radius: 10px;
@@ -180,7 +182,7 @@ html, .BodyPrime {
 /*-------------------------------------------Diseño de detalles------------------------------------------------------*/
 
 .ContenedorDetallesLibro {
-    display:flex;
+    display: flex;
     justify-content: center;
 }
 
@@ -244,11 +246,11 @@ html, .BodyPrime {
     cursor: pointer;
 }
 
-.Descargar:hover {
-    color: var(--light-orange);
-    background-color: var(--mostaza-palido);
-    border: 2px solid var(--light-bacco);
-}
+    .Descargar:hover {
+        color: var(--light-orange);
+        background-color: var(--mostaza-palido);
+        border: 2px solid var(--light-bacco);
+    }
 
 @media (max-width: 950px) {
     .ContenedorLibro {
@@ -285,11 +287,11 @@ html, .BodyPrime {
 
 /*-------------------------------------------Diseño de las Imagenes de Detalles------------------------------------------------------*/
 
-.Linea{
+.Linea {
     background: var(--amarillo-medio-oscuro);
     height: 5px;
     width: 100%;
-    display: block; 
+    display: block;
 }
 
 .contenedor-imagenes {
@@ -297,10 +299,10 @@ html, .BodyPrime {
     justify-content: space-around;
 }
 
-.contenedor-imagenes img {
-    max-width: 50%;
-    height: auto;
-}
+    .contenedor-imagenes img {
+        max-width: 50%;
+        height: auto;
+    }
 
 .Image {
     box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
@@ -311,9 +313,9 @@ html, .BodyPrime {
         flex-direction: column;
     }
 
-    .contenedor-imagenes img {
-    max-width: 100%;
-    }
+        .contenedor-imagenes img {
+            max-width: 100%;
+        }
 }
 
 /*-------------------------------------------Diseño del fantasma de Loading ------------------------------------------------------*/
@@ -330,24 +332,22 @@ html, .BodyPrime {
 
 @keyframes float {
     50% {
-     transform: translate(0, 20px);
-  }
+        transform: translate(0, 20px);
+    }
 }
 
 /* Establece el elemento SVG para que esté inicialmente oculto */
 .elemento {
     opacity: 0;
-    animation: aparecer 1s ease-in-out 15s forwards;
+    animation: aparecer 1s ease-in-out 20s forwards;
 }
 
-/* Define la animación para que haga que el elemento aparezca después de 15 segundos */
+/* Define la animación para que haga que el elemento aparezca después de 20 segundos */
 @keyframes aparecer {
     to {
         opacity: 1;
     }
 }
-
-
 
 /*-------------------------------------------Diseño de Bienvenida ------------------------------------------------------*/
 
@@ -371,13 +371,53 @@ html, .BodyPrime {
     transition: flex 0.8s ease;
 }
 
-.item:hover
-{
-    flex: 7;
+    .item:hover {
+        flex: 7;
+    }
+
+    .item img {
+        max-width: 100%;
+        height: auto;
+        object-fit: cover; /* Mantener la relación de aspecto y ajustar la imagen en el contenedor */
+    }
+
+/*-------------------------------------------Diseño de Sugerencia ------------------------------------------------------*/
+
+.Contenedor-Principal-Sugerencia {
+    background-image: linear-gradient(147deg, var(--amarillo-mostaza) 0%, white 95%);
+    box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto; /* Centra horizontalmente */
+    margin-top: 20px; /* Añade espacio en la parte superior */
 }
 
-.item img {
-    max-width: 100%;
-    height: auto;
-    object-fit: cover; /* Mantener la relación de aspecto y ajustar la imagen en el contenedor */
+.Contenedor-Secundario-Sugerencia {
+    text-align: center;
 }
+
+.Contenedor-Atributos-Sugerencia {
+    margin-top: 20px;
+}
+
+.Contenedor-Boton-Guardar-Sugerencia {
+    margin-top: 20px;
+}
+
+.Boton-Guardar-Sugerencia {
+    background-color: var(--amarillo-oscuro);
+    color: #fff;
+    font-weight: 600;
+    padding: 10px 20px;
+    border: solid 1px black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    .Boton-Guardar-Sugerencia:hover {
+        font-weight: 600;
+        background-color: var(--cian-claro);
+        color: black;
+    }

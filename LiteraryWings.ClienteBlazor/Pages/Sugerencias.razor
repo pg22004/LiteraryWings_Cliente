@@ -7,41 +7,28 @@
 <br />
 <br />
 <br />
-<h1 class="Titulo-SugerenciaDetalles">Sugerencias</h1>
-  
+<h1 class="Titulo-Sugerencia">Agrega una sugerencia o comentario</h1>
 <br />
-<br />
-<br />
+@*<MudText Typo="Typo.h3">Sugerencias del usuario</MudText>*@
 
-    <MudGrid>
-    <MudItem xs="7" sm="5">
-        <MudPaper Class="p-4">
-           
-            <EditForm Model="sugerencia" OnValidSubmit="OnValidSubmit">
-                <DataAnnotationsValidator />
-                <div class="card2">
-                    <MudCardContent col>
-                        <MudTextField Label="Nombre" @bind-value-="sugerencia.Nombre" For="@(() => sugerencia.Nombre)" />
-                        <br />
-                        <MudTextField Label="Correo" @bind-Value="sugerencia.Correo" For="@(() => sugerencia.Correo)" />
-                        <br />
-                        <MudTextField Label="Comentario" @bind-Value="sugerencia.Comentario" For="@(() => sugerencia.Comentario)" />
-                        <MudDivider />
-                        <br/>
-                    </MudCardContent>     
-                        <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Success" Class="ml-auto">Guardar</MudButton>
-                    <br />
+<div class="Contenedor-Principal-Sugerencia">
+    <div class="Contenedor-Secundario-Sugerencia">
+        <EditForm Model="sugerencia" OnValidSubmit="OnValidSubmit">
+            <div class="Contenedor-Atributos-Sugerencia">
+                <MudTextField Label="Nombre" @bind-Value="sugerencia.Nombre" For="@(() => sugerencia.Nombre)" />
+                <MudTextField Label="Correo" @bind-Value="sugerencia.Correo" For="@(() => sugerencia.Correo)" />
+                <MudTextField Label="Comentario" @bind-Value="sugerencia.Comentario" For="@(() => sugerencia.Comentario)" />
+                <div class="Contenedor-Boton-Guardar-Sugerencia">
+                    <button class="Boton-Guardar-Sugerencia" ButtonType="ButtonType.Submit" Variant="Variant.Filled">Guardar</button>
                 </div>
-            </EditForm>
-            @if (showLeaveAlert)
-            {
-                <MudAlert Severity="Severity.Error" ContentAlignment="HorizontalAlignment.Center" ShowCloseIcon="true" CloseIconClicked="(() => CloseMe(true))">No se pudo guardar.</MudAlert>
-            }
-        </MudPaper>
-    </MudItem>
-</MudGrid>
-
-
+            </div>
+        </EditForm>
+        @if (showLeaveAlert)
+        {
+            <MudAlert Severity="Severity.Error" ContentAlignment="HorizontalAlignment.Center" ShowCloseIcon="true" CloseIconClicked="(() => CloseMe(true))">No se pudo guardar.</MudAlert>
+        }
+    </div>
+</div>
 @code {
     bool success;
     private bool showLeaveAlert = false;
