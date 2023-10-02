@@ -6,7 +6,7 @@
 <br />
 <br />
 <br />
-<h1 class="Titulo-Autores">Sugerecias del Usuario</h1>
+<h1 class="Titulo-SugerenciaDetalles">Sugerecias de los Usuarios</h1>
 @*<MudText Typo="Typo.h4" Class="Titulo-Autores">Sugerencia</MudText>*@
 <br />
 
@@ -15,15 +15,17 @@
     {
         <div class="col-md-4">
             <div class="ContenedorComentarioTodo">
-                <div class="Contenedorcomentario">
-                    <div class="ContenedorSugerencia">
-                        <div class="ContenedorAtributos">
-                            <div class="Nombrecomentario">@item.Nombre</div>
-                            <div class="Correocomentario">Correo: <span class="Sub-Detallescomentario">@item.Correo</span></div>
-                            <div class="Sugerencia">Sugerencia: <span class="Sub-Detallescomentario">@item.Comentario</span></div>
-                        </div>
+
+                <div class="ContenedorSugerencia">
+
+                    <div class="ContenedorAtributos">
+                        <div class="Nombrecomentario">@item.Nombre</div>
+                        <br>
+                        <div class="Correocomentario">Correo: <span class="Sub-Detallescomentario">@item.Correo</span></div>
+                        <div class="Sugerencia">Sugerencia: <span class="Sub-Detallescomentario">@item.Comentario</span></div>
                     </div>
                 </div>
+
             </div>
         </div>
     }
