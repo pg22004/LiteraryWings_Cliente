@@ -1,8 +1,43 @@
 ﻿   <MudNavMenu>
-       <MudNavLink Icon="@Icons.Material.Filled.Home" IconColor="@Color.Inherit" Href="/" Match="NavLinkMatch.All">Bienvenida</MudNavLink>
-       <MudNavLink Icon="@Icons.Material.Filled.AccountBox" Href="/autores" IconColor="@Color.Inherit" Match="NavLinkMatch.Prefix">Autores</MudNavLink>
-       <MudNavLink Icon="@Icons.Material.Filled.Ballot" Href="/editoriales" IconColor="@Color.Inherit" Match="NavLinkMatch.Prefix">Editoriales</MudNavLink>
-       <MudNavLink Icon="@Icons.Material.Filled.Category" Href="/categorias" IconColor="@Color.Inherit" Match="NavLinkMatch.Prefix">Categorias</MudNavLink>
-       <MudNavLink Icon="@Icons.Material.Filled.AutoStories" Href="/libros" IconColor="@Color.Inherit" Match="NavLinkMatch.Prefix">Libros</MudNavLink>
-       <MudNavLink Icon="@Icons.Material.Filled.MarkUnreadChatAlt" Href="/sugerencias" IconColor="@Color.Inherit" Match="NavLinkMatch.Prefix">Sugerencias</MudNavLink>
+    <MudNavLink Href="/" >
+        <div class="nav-link-content">
+            <img src="/images/casa.png" class="nav-link-image" />
+            <span class="nav-link-text">Inicio</span>
+        </div>
+    </MudNavLink>
+    <br />
+    
+       <MudNavLink Href="/autores">
+        <div class="nav-link-content">
+            <img src="/images/usuario.png" class="nav-link-image" />
+            <span class="nav-link-text">Autores</span>
+        </div>
+    </MudNavLink>
+    <br />
+    <MudNavLink Href="/editoriales">
+        <div class="nav-link-content">
+            <img src="/images/edit.png" class="nav-link-image" />
+            <span class="nav-link-text">Editoriales</span>
+        </div>
+    </MudNavLink>
+    <br />
+    <MudNavLink Href="/categorias">
+        <div class="nav-link-content">
+            <img src="/images/categoria.png" class="nav-link-image" />
+            <span class="nav-link-text">Categorias</span>
+        </div>
+    </MudNavLink>
+    <br />
+        <MudNavLink Href="/libros">
+            <div class="nav-link-content">
+               <img src="/images/lobros.png" class="nav-link-image" />
+              <span class="nav-link-text">Libros</span>
+            </div>
+        </MudNavLink>
+    <br />
+       <MudNavLink  Href="/sugerencias" >
+           <div class="nav-link-content">
+              <img src="/images/sugerencia.png" class="nav-link-image" />
+              <span class="nav-link-text">Sugerencia</span>
+           </div></MudNavLink>
     </MudNavMenu>

@@ -3,12 +3,12 @@
 <MudThemeProvider />
 
 <MudLayout>
-    <MudAppBar Elevation="1" Class="grey darken-4">
-        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
-        <a href="/"><img class="Logo" src="/images/LogoC.png" alt="Logo"></a>
+    <MudAppBar Elevation="1" Class="shades transparent">
+        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Dark" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
+        <a href="/"><img class="Logo" src="/images/log.png" alt="Logo"></a>
         <MudSpacer />
     </MudAppBar>
-    <MudDrawer Class="pa-4 shades grey darken-4 shades-text text-white" @bind-Open="_drawerOpen" ClipMode="DrawerClipMode.Always" Elevation="2">
+    <MudDrawer Class="pa-6 shades transparent" @bind-Open="_drawerOpen" ClipMode="DrawerClipMode.Always" Elevation="2">
         <NavMenu></NavMenu>
     </MudDrawer>
     <MudMainContent Class="pa-4">
