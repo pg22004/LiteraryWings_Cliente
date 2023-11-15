@@ -18,15 +18,29 @@
         <div class="col-md-4">
             <div class="contenedorboton">
 
-                <a class="butt" href="@($"/librcate/{item.Id}")">
+                <a class="butt" type="button" href="@($"/librcate/{item.Id}")">
+                    <strong class="text">@item.Nombre</strong>
+                    <div id="container-stars">
+                        <div id="stars"></div>
+                    </div>
+
+                    <div id="glow">
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                    </div>
+                </a>
+
+                @* <a class="butt" >
                     <span class="text">@item.Nombre</span>
                     <div class="wave"></div>
-                </a>
+                </a> *@
 
             </div>
         </div>
     }
 </div>
+
+
 
 @code {
     IEnumerable<Categoria> cate = new List<Categoria>();
