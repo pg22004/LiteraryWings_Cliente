@@ -14,127 +14,11 @@
 
 /*--------------------------------------------------Boton Editorial---------------------------------------------------*/
 
-
-/*.butt {
-    text-align:center;
-    width: 275px;
-    padding: 20px;
-    position: relative;
-    display: block;
-    text-decoration: none;
-    overflow: hidden;
-    border: 0;
-    cursor: pointer;
-    border-radius: 2rem;
-    box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.5);
-}
-
-    .butt:hover .wave {
-        top: -80px;
-    }
-
-
-
-.text {
-    position: relative;
-    z-index: 1;
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 18px;
-    letter-spacing: 3px;
-    font-weight: 600;
-}
-
-.wave {
-    width: 275px;
-    height: 275px;
-    background-color: var(--morado);
-    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
-    position: absolute;
-    left: 0;
-    top: -80px;
-    transition: 0.4s;
-}
-
-    .wave::before, a .wave::after {
-        width: 200%;
-        height: 200%;
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translate(-50%, -75%);
-    }
-
-    .wave::before {
-        border-radius: 45%;
-        background-color: var(--morado-claro);
-        animation: wave 5s linear infinite;
-    }
-
-    .wave::after {
-        border-radius: 40%;
-        box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
-        animation: wave 10s linear infinite;
-    }
-
-@keyframes wave {
-    0% {
-        transform: translate(-50%, -75%) rotate(0deg);
-    }
-
-    100% {
-        transform: translate(-50%, -75%) rotate(300deg);
-    }
-}*/
-
-/*-----------------------------------------Estlilo lista sugerencia----------------------------------------*/
-.ContenedorComentarioTodo {
-    width: 360px;
-    height: 280px;
-    background-image: linear-gradient(147deg, var(--amarillo-medio-oscuro) 0%, black 95%);
-    box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
-    border-radius: 45px;
-    margin: 20px;
-}
-
-.ContenedorSugerencia {
-    display: flex;
-    align-items: center;
-    margin-left: 20px;
-    transform: translateY(60px);
-}
-
-.Correocomentario, .Sugerencia {
-    font-size: 18px;
-    font-weight: 900;
-    color: var(--amarillo-claro);
-    margin-bottom: 10px;
-    line-height: 1.5em;
-}
-
-.Nombrecomentario {
-    font-size: 23px;
-    font-weight: 900;
-    color: var(--blanco);
-    margin-bottom: 10px;
-    line-height: 1.5em;
-}
-
-.Sub-Detallescomentario {
-    font-size: 18px;
-    font-weight: 400;
-    color: white;
-    margin-bottom: 30px;
-    line-height: 1.5em;
-}
-/*----------------------------------------------------------*/
-
 .butt {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 18rem;
+    width: 19rem;
     overflow: hidden;
     height: 4rem;
     background-size: 300% 300%;
@@ -146,16 +30,6 @@
     background-image: linear-gradient(#212121, #212121), linear-gradient(137.48deg, #ffdb3b 10%,#FE53BB 45%, #8F51EA 67%, #0044ff 87%);
     background-origin: border-box;
     background-clip: content-box, border-box;
-}
-
-.text {
-    position: relative;
-    z-index: 1;
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 18px;
-    letter-spacing: 3px;
-    font-weight: 600;
 }
 
 #container-stars {
@@ -171,9 +45,10 @@
 
 strong {
     z-index: 2;
-    font-family: 'Avalors Personal Use';
-    font-size: 12px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 17px;
     letter-spacing: 5px;
+    font-weight: bold;
     color: #FFFFFF;
     text-shadow: 0 0 4px white;
 }
@@ -216,9 +91,9 @@ strong {
     animation: none;
 }
 
-.butt:active .circle {
-    background: #FE53BB;
-}
+    .butt:active .circle {
+        background: #FE53BB;
+    }
 
 #stars {
     position: relative;
@@ -308,6 +183,50 @@ strong {
         box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
     }
 }
+
+/*-----------------------------------------Estlilo lista sugerencia----------------------------------------*/
+.ContenedorComentarioTodo {
+    width: 360px;
+    height: 280px;
+    background-image: linear-gradient(147deg, var(--amarillo-medio-oscuro) 0%, black 95%);
+    box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+    border-radius: 45px;
+    margin: 20px;
+}
+
+.ContenedorSugerencia {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    transform: translateY(60px);
+}
+
+.Correocomentario, .Sugerencia {
+    font-size: 18px;
+    font-weight: 900;
+    color: var(--amarillo-claro);
+    margin-bottom: 10px;
+    line-height: 1.5em;
+}
+
+.Nombrecomentario {
+    font-size: 23px;
+    font-weight: 900;
+    color: var(--blanco);
+    margin-bottom: 10px;
+    line-height: 1.5em;
+}
+
+.Sub-Detallescomentario {
+    font-size: 18px;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 30px;
+    line-height: 1.5em;
+}
+/*----------------------------------------------------------*/
+
+
 
 
 
