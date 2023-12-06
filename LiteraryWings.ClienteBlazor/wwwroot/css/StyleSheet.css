@@ -1,13 +1,15 @@
 ﻿.contenedorMayor {
-    margin-left:78px;
+    width: 300px;
+    display: flex;
     justify-content: center;
+    font-size: 6vw;
 }
 
 .spinner {
     text-align: center;
-    height: 50px;
+    height: 70px;
     width: max-content;
-    font-size: 78px;
+    justify-content: center;
     font-weight: 600;
     font-family: 'Times New Roman', Times, serif;
     letter-spacing: 0.5em;
